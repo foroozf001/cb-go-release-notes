@@ -1,4 +1,4 @@
-# Release notes/changelogs
+# Release notes
 
 Every new release to codebeamer or extensions introduces changes. It's a common practice to document the changes in documents called release notes or changelogs.
 
@@ -42,14 +42,6 @@ make changelog NEW_VERSION=0.1.5 OLD_VERSION=0.1.4
 
 The new changelog file is stored under `changelog/`.
 
-### Artifactory
-
-Build and upload all binaries to JFrog Artifactory:
-
-```bash
-make artifact USER=YOUR_JFROG_USER SECRET=YOUR_JFROG_SECRET
-```
-
 ## Help
 
 ```bash
@@ -64,6 +56,5 @@ Development
   vet              Validates the source code
   run              Runs the source code
   build            Builds the binary
-  artifact         Pushes binary to JFrog Artifactory
   changelog        Generates changelogs
 ```
