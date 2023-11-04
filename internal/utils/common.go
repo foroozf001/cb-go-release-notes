@@ -1,9 +1,10 @@
-package helpers
+package utils
 
 import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 // CheckArgs should be used to ensure the right command line arguments are
@@ -30,7 +31,17 @@ func Info(format string, args ...interface{}) {
 	fmt.Printf("\x1b[34;1m%s\x1b[0m\n", fmt.Sprintf(format, args...))
 }
 
+// Info should be used to describe the example commands that are about to run.
+func Debug(format string, args ...interface{}) {
+	fmt.Printf("\x1b[34;1m%s DEBUG: %s\x1b[0m\n", timeStamp(), fmt.Sprintf(format, args...))
+}
+
 // Warning should be used to display a warning
 func Warning(format string, args ...interface{}) {
 	fmt.Printf("\x1b[36;1m%s\x1b[0m\n", fmt.Sprintf(format, args...))
+}
+
+func timeStamp() string {
+	t := time.Now()
+	return t.Format(time.RFC3339)
 }

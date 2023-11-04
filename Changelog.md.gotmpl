@@ -1,0 +1,6 @@
+# {{  .Version }} ({{ .Date }})
+
+## Changes
+
+{{ range $hash, $message := .Commits }}* [{{ printf "%.10s" $hash }}](https://github.com/foroozf001/cb-go-release-notes/commit/{{ $hash }}) {{ $message }}
+{{ end }}
